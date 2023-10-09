@@ -2,7 +2,7 @@
   <div class="main">
     <h2>Добавить заметку</h2>
     <div v-if="confirmed"><input class="w3-input" type="text" name="note-text" v-model="note">
-      <button type="button" v-on:click="addWord()">Добавить</button></div>
+      <button type="button" v-on:click="addNode()">Добавить</button></div>
     <div class = "links">
       <p v-if="confirmed"><a href="../notes/">Заметки</a></p>
       <p v-else><a href="../reg/">Регистрация</a></p>
@@ -33,7 +33,7 @@ export default {
     });
   },
   methods: {
-    addWord() {
+    addNode() {
       this.socket.emit("addNote", this.note);
     }
   }

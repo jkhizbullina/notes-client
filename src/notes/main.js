@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import WordsList from './WordsList.vue'
+import NotesList from './NotesList.vue'
 import "../assets/style.css";
 
-createApp(WordsList).mount('#app')
+createApp(NotesList).mount('#app')
