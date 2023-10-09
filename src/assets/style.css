@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,300');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75,700&display=swap');
+
+html, body, #app, .main {
+    height: 100%;
+}
+
+body {
+    background-color: #cad3d3;
+    font-family:  "Montserrat", sans-serif;
+    margin:0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.main
+{
+    background-color: #fff;
+    width:500px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 50px 20px 50px;
+}
+
+.description
+{
+    text-align: justify;
+}
+
+.word-pair
+{
+    width:100%;
+    display:grid;
+    gap: 0px 10px;
+    grid-auto-flow: column;
+}
+
+.word-pair .ru {
+    grid-column: 1;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: right;
+}
+
+.word-pair .en {
+    grid-column: 2;
+    text-transform: capitalize;
+    font-style: italic;
+    text-align: left;
+}
+
+.add-word {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-word .word {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.add-word .word label {
+    margin-right:5px;
+}
+
+.add-word .word input {
+    font-family:  "Montserrat", sans-serif;
+}
+
+.add-word button {
+    
+    font-family: 'Open Sans';
+    background-color: #068993;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+}
+
+.add-word button:hover {
+    background-color: #89b9bb;
+}
+
+.links
+{
+    margin-top:10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.links p
+{
+    margin: 10px;
+}
+
+.links a
+{
+    color: #068993;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.links a:hover
+{
+    color:#89b9bb;
+}
