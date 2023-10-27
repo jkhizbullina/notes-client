@@ -18,7 +18,7 @@ export default {
   name: 'LogIn',
   data() {
     return {
-      confirmed: false,
+      success: true,
       login: "user",
       password: "password"
     }
@@ -26,7 +26,6 @@ export default {
   created() {
     document.title = "Вход в профиль";
     this.socket = io("http://localhost:3000");
-    this.socket.emit("confirmUser");
   },
   mounted() {
     this.socket.on("userConfimation", confirmed => {
@@ -34,12 +33,12 @@ export default {
         window.location.href("../notes/");
         return;
       }
-      this.confirmed = confirmed;
+      this.success = confirmed;
     });
   },
   methods: {
     log_in() {
-      this.socket.emit("login", this.note);
+      this.socket.emit("login", this.user, this.password);
     }
   }
 }
