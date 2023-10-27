@@ -2,10 +2,10 @@
   <div class="main">
     <h2>Вход в профиль</h2>
     <div>
-      <p v-if="!confirmed" class="error">Неправильный логин или пароль!</p>
-      <label class="input-label" for="login">Логин</label><input class="w3-input" type="text" name="login" v-model="login">
-      <label class="input-label" for="login">Пароль</label><input class="w3-input" type="text" name="password" v-model="password">
-      <button type="button" v-on:click="log_in()">Войти</button></div>
+      <div v-if="!success" class="error">Неправильный логин или пароль!</div>
+      <div class="input"><label class="input-label" for="login">Логин</label><input class="w3-input" type="text" name="login" v-model="user"></div>
+      <div class="input"><label class="input-label" for="login">Пароль</label><input class="w3-input" type="text" name="password" v-model="password"></div>
+      <button type="button" v-on:click="login()">Войти</button></div>
     <div class = "links">
       <p><a href="../reg/">Регистрация</a></p>
     </div>
@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       success: true,
-      login: "user",
-      password: "password"
+      user: "",
+      password: ""
     }
   },
   created() {
@@ -28,16 +28,16 @@ export default {
     this.socket = io("http://localhost:3000");
   },
   mounted() {
-    this.socket.on("userConfimation", confirmed => {
+    this.socket.on("userConfirmation", confirmed => {
       if (confirmed) {
-        window.location.href("../notes/");
+        window.location.replace("../notes/");
         return;
       }
       this.success = confirmed;
     });
   },
   methods: {
-    log_in() {
+    login() {
       this.socket.emit("login", this.user, this.password);
     }
   }

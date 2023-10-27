@@ -31,26 +31,25 @@ body {
     text-align: justify;
 }
 
-.word-pair
+.input
+{
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.notes
 {
     width:100%;
-    display:grid;
-    gap: 0px 10px;
-    grid-auto-flow: column;
 }
 
-.word-pair .ru {
-    grid-column: 1;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-align: right;
-}
-
-.word-pair .en {
-    grid-column: 2;
-    text-transform: capitalize;
-    font-style: italic;
-    text-align: left;
+.note
+{
+    text-align: justify;
+    padding:5px;
+    width:100%;
 }
 
 .add-word {
@@ -68,12 +67,11 @@ body {
     margin-right:5px;
 }
 
-.add-word .word input {
+input {
     font-family:  "Montserrat", sans-serif;
 }
 
-.add-word button {
-    
+button {
     font-family: 'Open Sans';
     background-color: #068993;
     color: #fff;
@@ -83,9 +81,10 @@ body {
     font-size: 16px;
     font-weight: 600;
     display: block;
+    margin: 10px auto;
 }
 
-.add-word button:hover {
+button:hover {
     background-color: #89b9bb;
 }
 

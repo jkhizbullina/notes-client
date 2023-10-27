@@ -11,13 +11,11 @@ export default {
   created() {
     document.title = "Выход из профиля";
     this.socket = io("http://localhost:3000");
-    this.emit("logout");
+    this.socket.emit("logout");
   },
   mounted() {
-    this.socket.on("logoutConfirmed", confirmed => {
-      if (confirmed) {
+    this.socket.on("logoutConfirmed", () => {
         window.location.replace("../login/");
-      }
     });
   }
 }

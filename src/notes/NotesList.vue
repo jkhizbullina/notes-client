@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h2>Список слов в словаре</h2>
+    <h2>Мои заметки</h2>
       <div class="notes" v-if="confirmed">
         <div v-for="(note, index) in notes" :key="index" class="note">{{note}}</div>
     </div>
@@ -30,10 +30,10 @@ export default {
     this.socket.emit("fetchNotes");
   },
   mounted() {
-    this.socket.on("userConfimation", confirmed => {
+    this.socket.on("userConfirmation", confirmed => {
       this.confirmed = confirmed;
     });
-    this.socket.on("notelist", data => {
+    this.socket.on("noteslist", data => {
       this.notes = data;
     });
   }
