@@ -19,6 +19,8 @@
 
 <script>
 import io from "socket.io-client";
+import * as validator from 'email-validator';
+
 export default {
   name: 'RegUser',
   data() {
@@ -51,10 +53,12 @@ export default {
        || this.password1 == ""
        || this.first_name == ""
        || this.last_name == ""
-       || this.email == "") {
+       || this.email == ""
+       || !validator.validate(this.email)) {
         this.success = false;
         return;
       }
+      this.success = true;
       this.socket.emit("reg", this.user, this.password1, this.first_name, this.last_name, this.email);
     }
   }
