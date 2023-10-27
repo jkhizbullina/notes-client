@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import HomePage from './HomePage.vue'
+import LogIn from './LogIn.vue'
 import "../assets/style.css";
 
-createApp(HomePage).mount('#app')
+createApp(LogIn).mount('#app')
